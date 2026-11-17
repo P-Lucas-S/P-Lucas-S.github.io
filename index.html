@@ -4,257 +4,493 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pedro Lucas · Portfólio</title>
-<meta name="description" content="Pedro Lucas de Souza Ribeiro — construo agentes, automações e ferramentas com IA generativa. Demos no ar e código aberto.">
+<meta name="description" content="Pedro Lucas de Souza Ribeiro constrói agentes, automações e ferramentas com IA generativa. Converse com um agente que ele fez e veja o que a IA decide por trás.">
 <meta property="og:title" content="Pedro Lucas · Portfólio">
-<meta property="og:description" content="Agentes, automações e ferramentas com IA generativa — demos no ar e código aberto.">
+<meta property="og:description" content="Converse com um agente que eu construí e veja, ao lado, o que a IA decidiu por trás.">
 <meta property="og:image" content="https://p-lucas-s.github.io/img/agente.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230e5a6e'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' text-anchor='middle' fill='white'%3EPL%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0f2b2f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f2b2f'/%3E%3Cpath d='M9 23V9h6.5a4.5 4.5 0 0 1 0 9H9' fill='none' stroke='%23e2a52b' stroke-width='3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://agente-mercadinho.onrender.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
-  --fundo: #f6f7f9;
-  --cartao: #ffffff;
-  --texto: #1c2230;
-  --suave: #5a6374;
-  --linha: #dde2e8;
-  --destaque: #0e5a6e;
-  --destaque-claro: #e3eff2;
-  --raio: 12px;
+  --papel: #f2f3ef;
+  --branco: #fbfbf9;
+  --tinta: #16211e;
+  --suave: #56625e;
+  --linha: #d8dcd5;
+  --bastidor: #0f2b2f;
+  --bastidor-2: #173a3f;
+  --bastidor-texto: #cfe2de;
+  --bastidor-suave: #8fb0ab;
+  --ambar: #e2a52b;
+  --ambar-escuro: #8a5a06;
+  --titulo: "Archivo", "IBM Plex Sans", system-ui, sans-serif;
+  --texto: "IBM Plex Sans", system-ui, sans-serif;
+  --codigo: "IBM Plex Mono", ui-monospace, monospace;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-family: "IBM Plex Sans", system-ui, sans-serif; color: var(--texto); background: var(--fundo); line-height: 1.55; -webkit-font-smoothing: antialiased; }
-body { background: var(--fundo); }
-a { color: var(--destaque); text-decoration: none; }
-a:hover { text-decoration: underline; text-underline-offset: 3px; }
-.conteudo { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+html { background: var(--papel); color: var(--tinta); font-family: var(--texto); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+body { background: var(--papel); }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--ambar); outline-offset: 2px; border-radius: 3px; }
+.largura { max-width: 1180px; margin-left: auto; margin-right: auto; padding-left: 28px; padding-right: 28px; }
 
-/* topo */
-.topo { padding-top: 72px; padding-bottom: 48px; }
-.rotulo { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--destaque); letter-spacing: 0.04em; }
-h1 { font-size: clamp(32px, 5vw, 46px); line-height: 1.1; font-weight: 600; letter-spacing: -0.02em; margin-top: 10px; }
-.chamada { font-size: clamp(18px, 2.4vw, 22px); color: var(--suave); margin-top: 14px; max-width: 760px; }
-.chamada strong { color: var(--texto); font-weight: 500; }
-.acoes { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
-.botao { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; font-size: 15px; font-weight: 500; border: 1px solid var(--linha); background: var(--cartao); color: var(--texto); }
-.botao:hover { text-decoration: none; border-color: var(--destaque); }
-.botao.principal { background: var(--destaque); color: #fff; border-color: var(--destaque); }
-.botao.principal:hover { background: #0b4a5b; }
-.botao svg { width: 16px; height: 16px; }
+/* barra */
+.barra { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-top: 22px; padding-bottom: 22px; }
+.marca { font-family: var(--titulo); font-weight: 800; font-stretch: 125%; font-size: 19px; letter-spacing: -0.01em; text-decoration: none; }
+.barra nav { display: flex; gap: 22px; font-size: 15px; }
+.barra nav a { text-decoration: none; color: var(--suave); }
+.barra nav a:hover { color: var(--tinta); text-decoration: underline; text-underline-offset: 4px; }
+
+/* abertura */
+.abertura { display: grid; grid-template-columns: minmax(0, 4.7fr) minmax(0, 7.3fr); gap: 44px; align-items: start; padding-top: 40px; padding-bottom: 72px; }
+h1 { font-family: var(--titulo); font-weight: 750; font-stretch: 106%; font-size: clamp(36px, 3.7vw, 50px); line-height: 1.04; letter-spacing: -0.025em; text-wrap: balance; }
+.apresenta { margin-top: 24px; font-size: 18px; color: var(--suave); max-width: 34em; }
+.apresenta strong { color: var(--tinta); font-weight: 600; }
+.dica { margin-top: 22px; font-size: 15px; color: var(--suave); border-left: 3px solid var(--ambar); padding-left: 12px; max-width: 30em; }
+
+/* o agente ao vivo */
+.agente { border-radius: 10px; overflow: hidden; box-shadow: 0 1px 0 var(--linha), 0 18px 40px -24px rgba(15, 43, 47, 0.45); display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); min-height: 560px; }
+.frente { background: var(--branco); display: flex; flex-direction: column; min-width: 0; }
+.cab { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--linha); font-size: 14px; }
+.cab b { font-weight: 600; }
+.estado { font-size: 12.5px; color: var(--suave); display: inline-flex; align-items: center; gap: 6px; text-align: right; }
+.estado::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #b9c1bd; flex: none; }
+.estado[data-s="on"]::before { background: #2f9e6e; }
+.estado[data-s="acordando"]::before { background: var(--ambar); animation: pulsa 1.2s ease-in-out infinite; }
+.estado[data-s="erro"]::before { background: #c4452f; }
+@keyframes pulsa { 50% { opacity: 0.3; } }
+.conversa { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; max-height: 430px; scroll-behavior: smooth; }
+.msg { max-width: 88%; padding: 9px 13px; border-radius: 14px; font-size: 15px; line-height: 1.45; white-space: pre-wrap; overflow-wrap: anywhere; }
+.msg.cliente { align-self: flex-end; background: #dfeae6; border-bottom-right-radius: 4px; }
+.msg.loja { align-self: flex-start; background: #fff; border: 1px solid var(--linha); border-bottom-left-radius: 4px; }
+.msg.aviso { align-self: center; background: none; color: var(--suave); font-size: 13px; text-align: center; padding: 2px 8px; }
+.digitando { display: inline-flex; gap: 4px; padding: 13px 14px; }
+.digitando i { width: 6px; height: 6px; border-radius: 50%; background: #9aa6a2; animation: pulsa 1s infinite; }
+.digitando i:nth-child(2) { animation-delay: 0.15s; } .digitando i:nth-child(3) { animation-delay: 0.3s; }
+.sugestoes { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 16px 10px; }
+.sugestoes button { font: inherit; font-size: 12.5px; line-height: 1.3; padding: 4px 9px; border-radius: 6px; border: 1px solid var(--linha); background: #fff; color: var(--tinta); cursor: pointer; }
+.sugestoes button:hover:not(:disabled) { border-color: var(--bastidor); }
+.sugestoes button:disabled { opacity: 0.5; cursor: default; }
+.envio { display: flex; gap: 8px; padding: 12px 16px 16px; border-top: 1px solid var(--linha); }
+.envio input { flex: 1; min-width: 0; font: inherit; font-size: 15px; padding: 10px 12px; border: 1px solid var(--linha); border-radius: 6px; background: #fff; color: var(--tinta); }
+.envio button { font: inherit; font-size: 15px; font-weight: 600; padding: 10px 16px; border: 0; border-radius: 6px; background: var(--bastidor); color: #fff; cursor: pointer; }
+.envio button:disabled { opacity: 0.55; cursor: default; }
+
+.bastidores { background: var(--bastidor); color: var(--bastidor-texto); display: flex; flex-direction: column; min-width: 0; }
+.bastidores .cab { border-bottom-color: var(--bastidor-2); color: var(--bastidor-suave); }
+.bastidores .cab b { color: #fff; }
+.trilha { flex: 1; overflow-y: auto; padding: 14px 16px 18px; max-height: 500px; display: flex; flex-direction: column; gap: 14px; }
+.trilha .vazio { font-size: 14px; color: var(--bastidor-suave); line-height: 1.5; }
+.passo { border-left: 2px solid var(--bastidor-2); padding-left: 12px; }
+.passo .pergunta { font-size: 13px; color: var(--bastidor-suave); font-style: italic; }
+.chamada { font-family: var(--codigo); font-size: 13px; line-height: 1.5; margin-top: 6px; overflow-wrap: anywhere; }
+.chamada .fn { color: var(--ambar); font-weight: 500; }
+.retorno { font-family: var(--codigo); font-size: 12px; line-height: 1.5; color: var(--bastidor-suave); background: var(--bastidor-2); border-radius: 6px; padding: 8px 10px; margin-top: 6px; white-space: pre-wrap; overflow-wrap: anywhere; max-height: 170px; overflow-y: auto; }
+.nota { font-size: 13px; color: var(--bastidor-suave); margin-top: 6px; }
 
 /* seções */
-section { padding: 36px 0; }
-h2 { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--destaque); padding-bottom: 10px; border-bottom: 1px solid var(--linha); margin-bottom: 24px; }
-.aviso { font-size: 14px; color: var(--suave); margin: -12px 0 22px; }
+.secao { padding-top: 64px; padding-bottom: 24px; border-top: 1px solid var(--linha); }
+h2 { font-family: var(--titulo); font-weight: 700; font-stretch: 100%; font-size: clamp(28px, 3.2vw, 38px); line-height: 1.1; letter-spacing: -0.02em; max-width: 22em; }
+.secao > p.intro { margin-top: 14px; color: var(--suave); max-width: 40em; }
 
-/* projetos de IA */
-.projeto { display: grid; grid-template-columns: 1.15fr 1fr; gap: 28px; align-items: center; background: var(--cartao); border: 1px solid var(--linha); border-radius: var(--raio); padding: 24px; margin-bottom: 20px; }
-.projeto:nth-of-type(even) .imagem { order: 2; }
-.imagem { border-radius: 8px; overflow: hidden; border: 1px solid var(--linha); background: #eef1f4; aspect-ratio: 16 / 10; }
-.imagem img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
-.imagem.n8n { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 10px; padding: 12px; background: #e9eef1; align-items: center; }
-.imagem.n8n img { border-radius: 6px; border: 1px solid var(--linha); height: auto; max-height: 100%; object-fit: contain; }
-.imagem.n8n img:first-child { height: 100%; object-fit: cover; object-position: top; }
-h3 { font-size: 21px; font-weight: 600; line-height: 1.25; }
-.meta { font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--suave); margin-top: 4px; }
-.texto p { margin-top: 12px; font-size: 16px; }
-.texto ul { margin-top: 10px; padding-left: 18px; color: var(--suave); font-size: 15px; }
-.texto li { margin-top: 4px; }
-.texto li::marker { color: #9aa3b0; }
-.stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
-.stack span { font-size: 12.5px; padding: 3px 9px; border-radius: 999px; background: var(--destaque-claro); color: var(--destaque); }
-.links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-.links .botao { padding: 8px 14px; font-size: 14px; }
+/* projetos com IA: frente | bastidores */
+.projeto { margin-top: 48px; }
+.projeto h3 { font-family: var(--titulo); font-weight: 700; font-stretch: 108%; font-size: 24px; line-height: 1.2; letter-spacing: -0.01em; }
+.projeto .quando { font-size: 14.5px; color: var(--suave); margin-top: 4px; }
+.par { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); margin-top: 18px; border-radius: 10px; overflow: hidden; border: 1px solid var(--linha); }
+.par .lado-frente { background: var(--branco); padding: 22px; min-width: 0; }
+.par .lado-bastidor { background: var(--bastidor); color: var(--bastidor-texto); padding: 22px; min-width: 0; }
+.rotulo-lado { font-size: 13px; color: var(--suave); margin-bottom: 12px; }
+.lado-bastidor .rotulo-lado { color: var(--bastidor-suave); }
+.lado-bastidor p, .lado-bastidor li { font-size: 15px; line-height: 1.5; }
+.lado-bastidor ul { list-style: none; margin-top: 14px; display: grid; gap: 10px; }
+.lado-bastidor li { padding-left: 14px; position: relative; }
+.lado-bastidor li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 6px; height: 2px; background: var(--ambar); }
+.lado-bastidor strong { color: #fff; font-weight: 600; }
+.acoes { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; margin-top: 16px; font-size: 15px; }
+.botao { display: inline-block; text-decoration: none; font-weight: 600; padding: 9px 15px; border-radius: 6px; background: var(--bastidor); color: #fff; }
+.botao:hover { background: #153c41; }
+.link { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #9aa6a2; }
+.link:hover { text-decoration-color: var(--tinta); }
 
-/* outros projetos */
-.grade { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-.cartao { background: var(--cartao); border: 1px solid var(--linha); border-radius: var(--raio); overflow: hidden; display: flex; flex-direction: column; }
-.cartao .imagem { border: 0; border-bottom: 1px solid var(--linha); border-radius: 0; }
-.cartao .corpo { padding: 20px; display: flex; flex-direction: column; flex: 1; }
-.cartao p { margin-top: 10px; font-size: 15px; }
-.cartao .links { margin-top: auto; padding-top: 16px; }
+/* analista: pergunta, resposta e gráfico */
+.balao { display: inline-block; background: #dfeae6; padding: 8px 12px; border-radius: 12px; border-bottom-right-radius: 4px; font-size: 15px; }
+.resposta { margin-top: 12px; font-size: 15px; line-height: 1.55; }
+.grafico { margin-top: 16px; }
+.grafico figcaption { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+.barras { display: grid; grid-template-columns: max-content 1fr; gap: 6px 10px; align-items: center; font-size: 13px; }
+.barras .nome { color: var(--suave); text-align: right; }
+.barras .trilho { display: flex; align-items: center; gap: 8px; }
+.barras .b { height: 16px; background: var(--bastidor); border-radius: 0 3px 3px 0; }
+.barras .v { font-variant-numeric: tabular-nums; color: var(--suave); white-space: nowrap; }
 
-/* como trabalho */
-.passos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; counter-reset: passo; }
-.passo { background: var(--cartao); border: 1px solid var(--linha); border-radius: var(--raio); padding: 18px; }
-.passo::before { counter-increment: passo; content: "0" counter(passo); font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--destaque); }
-.passo h4 { font-size: 16px; font-weight: 600; margin-top: 6px; }
-.passo p { font-size: 14.5px; color: var(--suave); margin-top: 6px; }
+/* n8n: mensagem que vira alerta */
+.fluxo-msg { display: grid; gap: 14px; }
+.formulario { border: 1px solid var(--linha); border-radius: 8px; padding: 12px 14px; background: #fff; font-size: 14.5px; }
+.formulario .de { font-size: 13px; color: var(--suave); }
+.seta { font-size: 13px; color: var(--suave); padding-left: 14px; }
+.telegram { background: #e7eef3; border-radius: 10px; padding: 12px; }
+.telegram .bolha { background: #fff; border-radius: 10px; border-bottom-left-radius: 3px; padding: 10px 12px; font-size: 14px; line-height: 1.5; max-width: 30em; }
+.telegram .bolha b { font-weight: 600; }
+.telegram .bot { font-size: 12.5px; color: #3a6d8c; font-weight: 600; margin-bottom: 4px; }
+.json { font-family: var(--codigo); font-size: 12.5px; line-height: 1.55; background: var(--bastidor-2); border-radius: 6px; padding: 10px 12px; white-space: pre-wrap; overflow-wrap: anywhere; margin-top: 4px; }
+.json .k { color: var(--bastidor-suave); } .json .s { color: #fff; } .json .alta { color: var(--ambar); }
+
+/* sistemas */
+.sistema { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 28px; align-items: start; margin-top: 36px; }
+.sistema img { border-radius: 8px; border: 1px solid var(--linha); aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; width: 100%; height: auto; }
+.sistema h3 { font-family: var(--titulo); font-weight: 700; font-stretch: 108%; font-size: 22px; line-height: 1.2; }
+.sistema p { margin-top: 8px; font-size: 16px; max-width: 38em; }
 
 /* sobre */
-.sobre { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.sobre div { background: var(--cartao); border: 1px solid var(--linha); border-radius: var(--raio); padding: 18px; }
-.sobre h4 { font-size: 16px; font-weight: 600; }
-.sobre .meta { margin-top: 2px; }
-.sobre p { font-size: 14.5px; color: var(--suave); margin-top: 8px; }
+.sobre { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; margin-top: 28px; }
+.sobre p { max-width: 34em; }
+.sobre p + p { margin-top: 12px; }
+.sobre dl { display: grid; gap: 16px; }
+.sobre dt { font-weight: 600; }
+.sobre dd { color: var(--suave); font-size: 15.5px; }
 
-footer { padding-top: 40px; padding-bottom: 64px; color: var(--suave); font-size: 15px; }
-footer .acoes { margin-top: 16px; }
+footer { padding-top: 64px; padding-bottom: 72px; border-top: 1px solid var(--linha); margin-top: 64px; }
+footer h2 { max-width: 16em; }
+footer .acoes { margin-top: 22px; font-size: 16px; }
 
-@media (max-width: 820px) {
-  .topo { padding-top: 48px; padding-bottom: 32px; }
-  .projeto { grid-template-columns: 1fr; padding: 18px; gap: 18px; }
-  .projeto:nth-of-type(even) .imagem { order: 0; }
-  .grade, .sobre { grid-template-columns: 1fr; }
-  .passos { grid-template-columns: 1fr 1fr; }
+@media (max-width: 980px) {
+  .abertura { grid-template-columns: 1fr; gap: 36px; padding-top: 24px; }
+  .sobre { grid-template-columns: 1fr; gap: 28px; }
 }
-@media (max-width: 480px) {
-  .conteudo { padding-left: 16px; padding-right: 16px; }
-  .passos { grid-template-columns: 1fr; }
+@media (max-width: 720px) {
+  html { font-size: 16px; }
+  .largura { padding-left: 16px; padding-right: 16px; }
+  .barra nav { gap: 14px; font-size: 14px; }
+  .agente { grid-template-columns: 1fr; min-height: 0; }
+  .conversa { max-height: 340px; min-height: 260px; }
+  .trilha { max-height: 300px; }
+  .par { grid-template-columns: 1fr; }
+  .par .lado-frente, .par .lado-bastidor { padding: 18px; }
+  .sistema { grid-template-columns: 1fr; gap: 14px; }
+  .barras { grid-template-columns: 1fr; gap: 2px; }
+  .barras .nome { text-align: left; margin-top: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; scroll-behavior: auto !important; }
 }
 </style>
 </head>
 <body>
 
-<header class="conteudo topo">
-  <p class="rotulo">Sistemas e Mídias Digitais · UFC</p>
-  <h1>Pedro Lucas de Souza Ribeiro</h1>
-  <p class="chamada">Construo <strong>agentes, automações e ferramentas com IA generativa</strong>, de ponta a ponta: do problema de quem executa a tarefa até a demo no ar.</p>
-  <div class="acoes">
-    <a class="botao principal" href="curriculo.pdf">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
-      Currículo (PDF)</a>
-    <a class="botao" href="https://github.com/P-Lucas-S">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
-      GitHub</a>
-    <a class="botao" href="mailto:pedroplucas60@gmail.com">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-      pedroplucas60@gmail.com</a>
+<div class="largura barra">
+  <a class="marca" href="./">Pedro Lucas</a>
+  <nav aria-label="Links">
+    <a href="curriculo.pdf">Currículo</a>
+    <a href="https://github.com/P-Lucas-S">GitHub</a>
+    <a href="mailto:pedroplucas60@gmail.com">E-mail</a>
+  </nav>
+</div>
+
+<header class="largura abertura">
+  <div>
+    <h1>Construo com IA ferramentas para quem atende, vende e organiza.</h1>
+    <p class="apresenta">Sou <strong>Pedro Lucas</strong>, estudante de Sistemas e Mídias Digitais na UFC. Uso IA generativa para levar uma ideia do problema de quem executa a tarefa até uma demo funcionando, que outras pessoas podem testar.</p>
+    <p class="dica">Ao lado está um agente de atendimento que eu construí para uma loja fictícia. Escreva como se fosse um cliente e veja, no painel escuro, o que o modelo decide fazer.</p>
   </div>
+
+  <section class="agente" aria-label="Agente de atendimento ao vivo">
+    <div class="frente">
+      <div class="cab"><b>Mercadinho Exemplo</b><span class="estado" id="estado" data-s="">verificando o agente…</span></div>
+      <div class="conversa" id="conversa" aria-live="polite">
+        <div class="msg loja">Oi! Sou a atendente virtual do Mercadinho Exemplo, uma loja fictícia. Posso consultar preços e estoque, ver seu pedido, registrar trocas ou chamar uma pessoa.</div>
+      </div>
+      <div class="sugestoes" id="sugestoes">
+        <button type="button">Vocês têm arroz integral?</button>
+        <button type="button">Cadê meu pedido 1042?</button>
+        <button type="button">Veio leite vencido no pedido 1035</button>
+        <button type="button">Quero falar com uma pessoa</button>
+      </div>
+      <form class="envio" id="envio">
+        <input id="texto" maxlength="300" autocomplete="off" placeholder="Escreva como um cliente…" aria-label="Mensagem para o agente">
+        <button id="enviar">Enviar</button>
+      </form>
+    </div>
+    <div class="bastidores">
+      <div class="cab"><b>O que a IA decidiu</b><span>Gemini</span></div>
+      <div class="trilha" id="trilha" aria-live="polite">
+        <p class="vazio">A cada mensagem, o modelo escolhe se chama uma ferramenta (buscar produtos, consultar pedido, abrir chamado ou transferir para uma pessoa) e com quais dados. As chamadas aparecem aqui, com o que a ferramenta devolveu.</p>
+      </div>
+    </div>
+  </section>
 </header>
 
-<main class="conteudo">
-
-<section id="ia">
-  <h2>Projetos com IA</h2>
-  <p class="aviso">As demos rodam no plano gratuito e podem levar até 1 minuto para abrir na primeira visita. Esta página já pediu para elas acordarem.</p>
-
-  <article class="projeto">
-    <div class="imagem"><img src="img/agente.jpg" alt="Tela do agente de atendimento: conversa com o cliente à esquerda e, à direita, o painel Bastidores mostrando cada ferramenta chamada pelo modelo" loading="lazy"></div>
-    <div class="texto">
-      <h3>Agente de atendimento com IA</h3>
-      <p class="meta">projeto autoral · nov/2026 · loja fictícia</p>
-      <p>Um agente em que o LLM (Gemini) orquestra a conversa e decide, por chamada de ferramentas, quando buscar produtos, consultar pedidos, abrir chamados ou passar para uma pessoa.</p>
-      <ul>
-        <li>Responde só com o que as ferramentas devolvem; o painel “Bastidores” mostra cada decisão do modelo.</li>
-        <li>Limites de uso e tempo máximo por chamada; coberto por 7 testes automatizados.</li>
-      </ul>
-      <div class="stack"><span>Python</span><span>FastAPI</span><span>Gemini API</span><span>function calling</span><span>pytest</span><span>Render</span></div>
-      <div class="links">
-        <a class="botao principal" href="https://agente-mercadinho.onrender.com">Abrir demo</a>
-        <a class="botao" href="https://github.com/P-Lucas-S/agente-loja">Código</a>
-      </div>
-    </div>
-  </article>
+<main>
+<section class="largura secao" id="ia">
+  <h2>O que eu construí com IA</h2>
+  <p class="intro">Três projetos com dados fictícios, feitos do zero e colocados no ar em poucos dias. Em cada um, a parte clara mostra o que a pessoa vê, e a parte escura, o que acontece por trás.</p>
 
   <article class="projeto">
-    <div class="imagem"><img src="img/analista.jpg" alt="Tela do analista de vendas: indicadores do ano, perguntas sugeridas e uma resposta do Gemini com gráfico" loading="lazy"></div>
-    <div class="texto">
-      <h3>Analista de vendas com IA</h3>
-      <p class="meta">projeto autoral · nov/2026 · dados fictícios</p>
-      <p>Análise de dados com IA: perguntas em português sobre um ano de vendas (cerca de 35 mil linhas). O Gemini escolhe entre cinco análises prontas em pandas e explica o resultado, com gráfico.</p>
-      <ul>
-        <li>O modelo nunca escreve código nem estima valores: todo número sai de uma função.</li>
-        <li>Quando os dados não respondem (lucro, estoque), ele diz isso e sugere o que dá para analisar.</li>
-      </ul>
-      <div class="stack"><span>Python</span><span>pandas</span><span>FastAPI</span><span>Gemini API</span><span>Chart.js</span></div>
-      <div class="links">
-        <a class="botao principal" href="https://analista-vendas-mercadinho.onrender.com">Abrir demo</a>
-        <a class="botao" href="https://github.com/P-Lucas-S/analista-vendas">Código</a>
-      </div>
-    </div>
-  </article>
-
-  <article class="projeto">
-    <div class="imagem n8n">
-      <img src="img/n8n-form.jpg" alt="Formulário Fale com o Mercadinho Exemplo, preenchido com uma reclamação" loading="lazy">
-      <img src="img/n8n-alerta.jpg" alt="Alerta de mensagem urgente no Telegram, com resumo e sugestão de resposta gerados pelo Gemini" loading="lazy">
-    </div>
-    <div class="texto">
-      <h3>Automação de atendimento no n8n</h3>
-      <p class="meta">projeto autoral · nov/2026</p>
-      <p>Dois fluxos: um classifica cada mensagem de cliente com o Gemini (assunto, sentimento, urgência e resposta sugerida) e avisa no Telegram os casos urgentes; outro manda um resumo do dia às 19h.</p>
-      <ul>
-        <li>Saída estruturada em JSON garante que a classificação venha sempre no mesmo formato.</li>
-        <li>Se o modelo falhar, a mensagem é gravada para revisão em vez de se perder.</li>
-      </ul>
-      <div class="stack"><span>n8n</span><span>Gemini API</span><span>Telegram</span><span>Data Tables</span></div>
-      <div class="links">
-        <a class="botao principal" href="https://pedrinribeiro.app.n8n.cloud/form/mercadinho-fale-conosco">Testar o formulário</a>
-        <a class="botao" href="https://github.com/P-Lucas-S/automacao-n8n">Código</a>
-      </div>
-    </div>
-  </article>
-</section>
-
-<section id="sistemas">
-  <h2>Sistemas web</h2>
-  <div class="grade">
-    <article class="cartao">
-      <div class="imagem"><img src="img/planejador.jpg" alt="Dashboard do Planejador de Equipes com projetos, ocupação da equipe e apontamento do mês" loading="lazy"></div>
-      <div class="corpo">
-        <h3>Planejador de Equipes</h3>
-        <p class="meta">projeto autoral · 2026 · desenvolvedor único</p>
-        <p>Gestores alocam pessoas em projetos e controlam horas contratadas, com teto mensal garantido mesmo com vários gestores alocando ao mesmo tempo e três dashboards que mudam conforme o papel do usuário.</p>
-        <div class="stack"><span>React</span><span>TypeScript</span><span>Node/Express</span><span>Prisma</span><span>MySQL</span></div>
-        <div class="links"><a class="botao principal" href="https://planejador-equipes.onrender.com">Abrir demo</a></div>
-      </div>
-    </article>
-    <article class="cartao">
-      <div class="imagem"><img src="img/balcao.jpg" alt="Tela de atendimento guiado do Balcão MEI, com o empreendedor selecionado e os serviços disponíveis" loading="lazy"></div>
-      <div class="corpo">
-        <h3>Balcão MEI</h3>
-        <p class="meta">projeto autoral · 2025–2026</p>
-        <p>Atendimento presencial a microempreendedores como fluxo guiado: o atendente escolhe a pessoa e aciona 12 serviços filtrados pelo perfil, com dados preenchidos pelas APIs dos Correios e da Receita Federal.</p>
-        <div class="stack"><span>Python</span><span>Flask</span><span>PostgreSQL</span><span>pytest</span></div>
-        <div class="links">
-          <a class="botao principal" href="https://balcao-mei.onrender.com">Abrir demo</a>
-          <a class="botao" href="https://github.com/P-Lucas-S/balcao-mei">Código</a>
+    <h3>Agente de atendimento</h3>
+    <p class="quando">Novembro de 2026. É o agente que está no topo da página.</p>
+    <div class="par">
+      <div class="lado-frente">
+        <p class="rotulo-lado">O que o cliente vê</p>
+        <p>Uma conversa comum: o cliente pergunta de produto, de pedido, reclama de um item com problema ou pede uma pessoa. A resposta vem curta e com dados da loja, nunca inventados.</p>
+        <div class="acoes">
+          <a class="botao" href="https://agente-mercadinho.onrender.com">Abrir a demo completa</a>
+          <a class="link" href="https://github.com/P-Lucas-S/agente-loja">Ver o código</a>
         </div>
       </div>
-    </article>
-  </div>
+      <div class="lado-bastidor">
+        <p class="rotulo-lado">O que acontece por trás</p>
+        <p>O Gemini recebe quatro ferramentas descritas em JSON e decide, mensagem a mensagem, qual chamar. O código executa a ferramenta e devolve o resultado para o modelo escrever a resposta.</p>
+        <ul>
+          <li><strong>Sem invenção:</strong> preço, estoque e pedido só saem das ferramentas.</li>
+          <li><strong>Limites:</strong> até 5 rodadas por mensagem, tempo máximo por chamada e cota diária, para caber no plano gratuito.</li>
+          <li><strong>Testado:</strong> 8 testes automatizados com pytest.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <article class="projeto">
+    <h3>Analista de vendas</h3>
+    <p class="quando">Novembro de 2026. Um ano de vendas fictícias, cerca de 35 mil linhas.</p>
+    <div class="par">
+      <div class="lado-frente">
+        <p class="rotulo-lado">O que a dona da loja vê</p>
+        <span class="balao">Quais os 5 produtos que mais faturaram?</span>
+        <p class="resposta">O Arroz branco 5 kg foi o produto que mais faturou, alcançando R$ 72.994,84 no ano. O ranking também destaca o Café torrado e moído 500 g e o Queijo coalho 500 g. Chama atenção a liderança do arroz, que supera o segundo colocado em quase o dobro do valor.</p>
+        <figure class="grafico">
+          <figcaption>Faturamento no ano, em reais</figcaption>
+          <div class="barras" role="img" aria-label="Arroz branco 5 kg, 72.995 reais; Café torrado e moído 500 g, 39.302; Queijo coalho 500 g, 35.379; Ovos brancos, dúzia, 29.286; Pão de forma integral, 25.190">
+            <span class="nome">Arroz branco 5 kg</span><span class="trilho"><span class="b" style="width:78%"></span><span class="v">72.995</span></span>
+            <span class="nome">Café torrado e moído 500 g</span><span class="trilho"><span class="b" style="width:42%"></span><span class="v">39.302</span></span>
+            <span class="nome">Queijo coalho 500 g</span><span class="trilho"><span class="b" style="width:37.8%"></span><span class="v">35.379</span></span>
+            <span class="nome">Ovos brancos (dúzia)</span><span class="trilho"><span class="b" style="width:31.3%"></span><span class="v">29.286</span></span>
+            <span class="nome">Pão de forma integral</span><span class="trilho"><span class="b" style="width:26.9%"></span><span class="v">25.190</span></span>
+          </div>
+        </figure>
+        <div class="acoes">
+          <a class="botao" href="https://analista-vendas-mercadinho.onrender.com">Fazer uma pergunta</a>
+          <a class="link" href="https://github.com/P-Lucas-S/analista-vendas">Ver o código</a>
+        </div>
+      </div>
+      <div class="lado-bastidor">
+        <p class="rotulo-lado">O que a IA decidiu</p>
+        <p class="chamada"><span class="fn">ranking</span>({"n": 5, "metrica": "faturamento", "ordem": "maiores"})</p>
+        <ul>
+          <li><strong>O modelo escolhe, o código calcula:</strong> o Gemini escolhe entre cinco análises prontas em pandas (resumo, ranking, evolução, distribuição e comparação) e os parâmetros. Ele nunca escreve código nem estima números.</li>
+          <li><strong>Gráfico pronto:</strong> cada análise devolve os dados do gráfico junto, e a página desenha.</li>
+          <li><strong>Honesto sobre os limites:</strong> perguntado sobre lucro, ele responde que os dados não têm custos e sugere o que dá para analisar.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <article class="projeto">
+    <h3>Triagem de mensagens no n8n</h3>
+    <p class="quando">Novembro de 2026. Dois fluxos rodando no n8n Cloud.</p>
+    <div class="par">
+      <div class="lado-frente">
+        <p class="rotulo-lado">O que chega e o que a equipe recebe</p>
+        <div class="fluxo-msg">
+          <div class="formulario"><p class="de">Mensagem pelo formulário · pedido 1047</p><p>Cobraram duas vezes no Pix o meu pedido de hoje. Preciso que devolvam o valor, estou sem dinheiro na conta.</p></div>
+          <p class="seta">segundos depois, no Telegram da loja:</p>
+          <div class="telegram"><div class="bolha">
+            <p class="bot">Mercadinho Exemplo Alertas</p>
+            <p><b>Mensagem urgente</b> · MSG-261115-JALV<br>Categoria: reclamação · sentimento negativo</p>
+            <p style="margin-top:8px"><b>Resumo:</b> a cliente relata cobrança em duplicidade via Pix no pedido 1047 e pede o estorno urgente.</p>
+            <p style="margin-top:8px"><b>Sugestão de resposta:</b> Olá, Marta. Pedimos desculpas pelo transtorno. Vamos verificar o ocorrido com o pagamento e retornaremos em breve.</p>
+          </div></div>
+        </div>
+        <div class="acoes">
+          <a class="botao" href="https://pedrinribeiro.app.n8n.cloud/form/mercadinho-fale-conosco">Mandar uma mensagem</a>
+          <a class="link" href="https://github.com/P-Lucas-S/automacao-n8n">Ver os fluxos</a>
+        </div>
+      </div>
+      <div class="lado-bastidor">
+        <p class="rotulo-lado">O que a IA devolveu</p>
+<pre class="json">{
+  <span class="k">"categoria"</span>: <span class="s">"reclamacao"</span>,
+  <span class="k">"sentimento"</span>: <span class="s">"negativo"</span>,
+  <span class="k">"urgencia"</span>: <span class="alta">"alta"</span>,
+  <span class="k">"resumo"</span>: <span class="s">"…"</span>,
+  <span class="k">"resposta_sugerida"</span>: <span class="s">"…"</span>
+}</pre>
+        <ul>
+          <li><strong>Formato garantido:</strong> o Gemini responde num esquema JSON fixo, então o fluxo sempre sabe ler a urgência.</li>
+          <li><strong>Só o urgente vira alerta:</strong> elogios e dúvidas vão para a tabela; produto estragado, cobrança errada ou pedido não entregue vão também para o Telegram.</li>
+          <li><strong>Nada se perde:</strong> se o modelo falhar, a mensagem é gravada para revisão. Às 19h, um segundo fluxo resume o dia.</li>
+        </ul>
+      </div>
+    </div>
+  </article>
 </section>
 
-<section id="como">
-  <h2>Como eu trabalho</h2>
-  <div class="passos">
-    <div class="passo"><h4>Parto da dor</h4><p>Converso com quem executa a tarefa e entendo onde o tempo se perde.</p></div>
-    <div class="passo"><h4>Corto o escopo</h4><p>Defino a menor versão que já resolve o problema de verdade.</p></div>
-    <div class="passo"><h4>Construo com IA</h4><p>Prompt engineering, agentes e vibe coding com Claude Code, até a demo no ar.</p></div>
-    <div class="passo"><h4>Ajusto com o usuário</h4><p>Testo com quem vai usar e corrijo o que a primeira versão errou.</p></div>
-  </div>
+<section class="largura secao" id="sistemas">
+  <h2>Sistemas que coloquei no ar</h2>
+  <article class="sistema">
+    <img src="img/planejador.jpg" alt="Painel do Planejador de Equipes com projetos, ocupação da equipe e horas apontadas no mês" loading="lazy" width="1200" height="600">
+    <div>
+      <h3>Planejador de Equipes</h3>
+      <p class="quando">2026, desenvolvedor único.</p>
+      <p>Gestores alocam pessoas em projetos e controlam as horas contratadas. O teto mensal de horas por pessoa se mantém mesmo com vários gestores alocando ao mesmo tempo, e os três dashboards mudam conforme o papel de quem entra.</p>
+      <p class="quando">React, TypeScript, Node/Express, Prisma, MySQL.</p>
+      <div class="acoes"><a class="botao" href="https://planejador-equipes.onrender.com">Abrir a demo</a></div>
+    </div>
+  </article>
+  <article class="sistema">
+    <img src="img/balcao.jpg" alt="Tela de atendimento guiado do Balcão MEI, com o empreendedor selecionado e os serviços disponíveis" loading="lazy" width="1200" height="750">
+    <div>
+      <h3>Balcão MEI</h3>
+      <p class="quando">2025 a 2026.</p>
+      <p>O atendimento presencial a microempreendedores vira um fluxo guiado: o atendente escolhe a pessoa e aciona 12 serviços filtrados pelo perfil dela, com dados preenchidos pelas APIs dos Correios e da Receita Federal.</p>
+      <p class="quando">Python, Flask, PostgreSQL, pytest.</p>
+      <div class="acoes"><a class="botao" href="https://balcao-mei.onrender.com">Abrir a demo</a><a class="link" href="https://github.com/P-Lucas-S/balcao-mei">Ver o código</a></div>
+    </div>
+  </article>
 </section>
 
-<section id="sobre">
-  <h2>Onde estou</h2>
+<section class="largura secao" id="sobre">
+  <h2>Sobre mim</h2>
   <div class="sobre">
-    <div><h4>Bolsista de Pesquisa e Desenvolvimento</h4><p class="meta">LIT · UFC · desde mar/2025</p><p>Desenvolvo, mantenho e publico aplicativos móveis de saúde em Flutter e Firebase, na App Store e no Google Play.</p></div>
-    <div><h4>Bolsista de Mídias</h4><p class="meta">SETEE · Prefeitura de Maracanaú · desde set/2025</p><p>Crio conteúdo para os canais do SINE Municipal e prototipei ferramentas para a equipe, como um gerador de cards de vagas.</p></div>
-    <div><h4>Sistemas e Mídias Digitais</h4><p class="meta">UFC · trilha de Sistemas · previsão jul/2027</p><p>TCC em andamento sobre regras trabalhistas como código (Rules as Code).</p></div>
+    <div>
+      <p>Gosto de fazer o caminho inteiro: converso com quem vai usar, corto o escopo até a menor versão que já resolve e construo com IA, com Claude Code, Gemini e n8n, até a demo no ar.</p>
+      <p>Moro em Maracanaú, no Ceará, e trabalho remoto.</p>
+    </div>
+    <dl>
+      <div><dt>Bolsista de Pesquisa e Desenvolvimento, LIT/UFC</dt><dd>Desde março de 2025. Publico os aplicativos de saúde do laboratório na App Store e no Google Play e desenvolvo parte deles em Flutter e Firebase.</dd></div>
+      <div><dt>Bolsista de Mídias, SETEE, Prefeitura de Maracanaú</dt><dd>Desde setembro de 2025. Crio artes e conteúdo para os canais da secretaria e do SINE Municipal.</dd></div>
+      <div><dt>Sistemas e Mídias Digitais, UFC</dt><dd>Trilha de Sistemas, conclusão prevista em julho de 2027. TCC sobre regras trabalhistas como código.</dd></div>
+    </dl>
   </div>
 </section>
-
 </main>
 
-<footer class="conteudo">
-  <p>Maracanaú, CE · disponível para trabalho remoto.</p>
+<footer class="largura">
+  <h2>Vamos conversar?</h2>
   <div class="acoes">
-    <a class="botao principal" href="mailto:pedroplucas60@gmail.com">Falar comigo</a>
-    <a class="botao" href="curriculo.pdf">Currículo (PDF)</a>
-    <a class="botao" href="https://github.com/P-Lucas-S">GitHub</a>
+    <a class="botao" href="mailto:pedroplucas60@gmail.com">Escrever para pedroplucas60@gmail.com</a>
+    <a class="link" href="curriculo.pdf">Baixar o currículo</a>
+    <a class="link" href="https://github.com/P-Lucas-S">GitHub</a>
   </div>
 </footer>
 
 <script>
-// Acorda as demos do Render (plano gratuito dorme sem tráfego) enquanto a pessoa lê a página.
-["https://agente-mercadinho.onrender.com/api/health",
- "https://analista-vendas-mercadinho.onrender.com/api/health",
- "https://planejador-equipes.onrender.com/api/health",
- "https://balcao-mei.onrender.com/"].forEach(function (u) {
-  try { fetch(u, { mode: "no-cors", cache: "no-store" }).catch(function () {}); } catch (e) {}
-});
+(function () {
+  var API = "https://agente-mercadinho.onrender.com";
+  var conversa = document.getElementById("conversa");
+  var trilha = document.getElementById("trilha");
+  var estado = document.getElementById("estado");
+  var form = document.getElementById("envio");
+  var campo = document.getElementById("texto");
+  var botaoEnviar = document.getElementById("enviar");
+  var sugestoes = document.querySelectorAll("#sugestoes button");
+  var sessao = null, online = false, ocupado = false, acordando = null;
+
+  function marcar(s, texto) { estado.setAttribute("data-s", s); estado.textContent = texto; }
+  function esperar(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+  function el(tag, cls, texto) { var e = document.createElement(tag); if (cls) e.className = cls; if (texto != null) e.textContent = texto; return e; }
+  function rolar(box) { box.scrollTop = box.scrollHeight; }
+
+  // Texto do modelo com **negrito**, sem nunca interpretar HTML.
+  function comNegrito(texto) {
+    var frag = document.createDocumentFragment();
+    String(texto).split(/(\*\*[^*]+\*\*)/g).forEach(function (parte) {
+      if (/^\*\*[^*]+\*\*$/.test(parte)) frag.appendChild(el("strong", null, parte.slice(2, -2)));
+      else if (parte) frag.appendChild(document.createTextNode(parte));
+    });
+    return frag;
+  }
+
+  // O servidor gratuito dorme sem uso: tenta por até 2 minutos.
+  function acordar() {
+    if (acordando) return acordando;
+    acordando = (async function () {
+      var inicio = Date.now(), avisou = false;
+      var timer = setTimeout(function () { if (!online) { avisou = true; marcar("acordando", "acordando o servidor (até 1 min)"); } }, 1500);
+      while (Date.now() - inicio < 120000) {
+        try {
+          var r = await fetch(API + "/api/health", { cache: "no-store" });
+          if (r.ok) { var j = await r.json(); if (j.ok) { clearTimeout(timer); online = true; marcar("on", j.modo === "gemini" ? "online · Gemini" : "online"); return true; } }
+        } catch (e) { /* ainda acordando */ }
+        await esperar(4000);
+      }
+      clearTimeout(timer);
+      marcar("erro", "fora do ar agora");
+      acordando = null;
+      return false;
+    })();
+    return acordando;
+  }
+
+  function travar(sim) {
+    ocupado = sim; botaoEnviar.disabled = sim;
+    sugestoes.forEach(function (b) { b.disabled = sim; });
+  }
+
+  function mostrarBastidores(pergunta, dados) {
+    var vazio = trilha.querySelector(".vazio"); if (vazio) vazio.remove();
+    var bloco = el("div", "passo");
+    bloco.appendChild(el("p", "pergunta", "“" + pergunta + "”"));
+    var passos = dados.passos || [];
+    if (!passos.length) bloco.appendChild(el("p", "nota", "Nenhuma ferramenta: respondeu com as informações da loja que já conhece."));
+    passos.forEach(function (p) {
+      var linha = el("p", "chamada");
+      linha.appendChild(el("span", "fn", p.ferramenta));
+      linha.appendChild(document.createTextNode("(" + JSON.stringify(p.argumentos || {}) + ")"));
+      bloco.appendChild(linha);
+      var ret = JSON.stringify(p.resultado, null, 1) || "";
+      bloco.appendChild(el("pre", "retorno", ret.length > 600 ? ret.slice(0, 600) + "\n…" : ret));
+    });
+    if (dados.transferida) bloco.appendChild(el("p", "nota", "Conversa marcada para atendimento humano."));
+    trilha.insertBefore(bloco, trilha.firstChild);
+    trilha.scrollTop = 0;
+  }
+
+  async function enviar(texto) {
+    texto = (texto || "").trim();
+    if (!texto || ocupado) return;
+    travar(true);
+    campo.value = "";
+    conversa.appendChild(el("div", "msg cliente", texto));
+    var digitando = el("div", "msg loja digitando"); digitando.setAttribute("aria-label", "respondendo");
+    digitando.innerHTML = "<i></i><i></i><i></i>";
+    conversa.appendChild(digitando); rolar(conversa);
+    try {
+      if (!online) {
+        conversa.insertBefore(el("div", "msg aviso", "O servidor gratuito estava dormindo. Acordando, isso leva até 1 minuto…"), digitando); rolar(conversa);
+        if (!(await acordar())) throw new Error("fora");
+      }
+      var ctrl = new AbortController(); var limite = setTimeout(function () { ctrl.abort(); }, 60000);
+      var r = await fetch(API + "/api/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ mensagem: texto, sessao: sessao }), signal: ctrl.signal });
+      clearTimeout(limite);
+      if (!r.ok) throw new Error("http " + r.status);
+      var dados = await r.json();
+      sessao = dados.sessao;
+      digitando.remove();
+      var resp = el("div", "msg loja"); resp.appendChild(comNegrito(dados.resposta || "…"));
+      conversa.appendChild(resp);
+      mostrarBastidores(texto, dados);
+    } catch (e) {
+      digitando.remove();
+      conversa.appendChild(el("div", "msg aviso", "O agente não respondeu agora (o plano gratuito tem limite de uso). Tente de novo em instantes ou abra a demo completa."));
+    }
+    rolar(conversa);
+    travar(false);
+    if (window.matchMedia("(pointer: fine)").matches) campo.focus({ preventScroll: true });
+  }
+
+  form.addEventListener("submit", function (e) { e.preventDefault(); enviar(campo.value); });
+  sugestoes.forEach(function (b) { b.addEventListener("click", function () { enviar(b.textContent); }); });
+  acordar();
+
+  // Acorda também as outras demos enquanto a pessoa lê a página.
+  ["https://analista-vendas-mercadinho.onrender.com/api/health", "https://planejador-equipes.onrender.com/api/health", "https://balcao-mei.onrender.com/"]
+    .forEach(function (u) { try { fetch(u, { mode: "no-cors", cache: "no-store" }).catch(function () {}); } catch (e) {} });
+})();
 </script>
 </body>
 </html>
