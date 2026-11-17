@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pedro Lucas · Portfólio</title>
+<meta name="description" content="Pedro Lucas de Souza Ribeiro — construo agentes, automações e ferramentas com IA generativa. Demos no ar e código aberto.">
+<meta property="og:title" content="Pedro Lucas · Portfólio">
+<meta property="og:description" content="Agentes, automações e ferramentas com IA generativa — demos no ar e código aberto.">
+<meta property="og:image" content="https://p-lucas-s.github.io/img/agente.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230e5a6e'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' text-anchor='middle' fill='white'%3EPL%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --fundo: #f6f7f9;
+  --cartao: #ffffff;
+  --texto: #1c2230;
+  --suave: #5a6374;
+  --linha: #dde2e8;
+  --destaque: #0e5a6e;
+  --destaque-claro: #e3eff2;
+  --raio: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: "IBM Plex Sans", system-ui, sans-serif; color: var(--texto); background: var(--fundo); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+body { background: var(--fundo); }
+a { color: var(--destaque); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.conteudo { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+/* topo */
+.topo { padding-top: 72px; padding-bottom: 48px; }
+.rotulo { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--destaque); letter-spacing: 0.04em; }
+h1 { font-size: clamp(32px, 5vw, 46px); line-height: 1.1; font-weight: 600; letter-spacing: -0.02em; margin-top: 10px; }
+.chamada { font-size: clamp(18px, 2.4vw, 22px); color: var(--suave); margin-top: 14px; max-width: 760px; }
+.chamada strong { color: var(--texto); font-weight: 500; }
+.acoes { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.botao { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; font-size: 15px; font-weight: 500; border: 1px solid var(--linha); background: var(--cartao); color: var(--texto); }
+.botao:hover { text-decoration: none; border-color: var(--destaque); }
+.botao.principal { background: var(--destaque); color: #fff; border-color: var(--destaque); }
+.botao.principal:hover { background: #0b4a5b; }
+.botao svg { width: 16px; height: 16px; }
+
+/* seções */
+section { padding: 36px 0; }
+h2 { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--destaque); padding-bottom: 10px; border-bottom: 1px solid var(--linha); margin-bottom: 24px; }
+.aviso { font-size: 14px; color: var(--suave); margin: -12px 0 22px; }
+
+/* projetos de IA */
+.projeto { display: grid; grid-template-columns: 1.15fr 1fr; gap: 28px; align-items: center; background: var(--cartao); border: 1px solid var(--linha); border-radius: var(--raio); padding: 24px; margin-bottom: 20px; }
+.projeto:nth-of-type(even) .imagem { order: 2; }
+.imagem { border-radius: 8px; overflow: hidden; border: 1px solid var(--linha); background: #eef1f4; aspect-ratio: 16 / 10; }
+.imagem img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
+.imagem.n8n { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 10px; padding: 12px; background: #e9eef1; align-items: center; }
+.imagem.n8n img { border-radius: 6px; border: 1px solid var(--linha); height: auto; max-height: 100%; object-fit: contain; }
+.imagem.n8n img:first-child { height: 100%; object-fit: cover; object-position: top; }
+h3 { font-size: 21px; font-weight: 600; line-height: 1.25; }
+.meta { font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--suave); margin-top: 4px; }
+.texto p { margin-top: 12px; font-size: 16px; }
+.texto ul { margin-top: 10px; padding-left: 18px; color: var(--suave); font-size: 15px; }
+.texto li { margin-top: 4px; }
+.texto li::marker { color: #9aa3b0; }
+.stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.stack span { font-size: 12.5px; padding: 3px 9px; border-radius: 999px; background: var(--destaque-claro); color: var(--destaque); }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.links .botao { padding: 8px 14px; font-size: 14px; }
+
+/* outros projetos */
+.grade { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.cartao { background: var(--cartao); border: 1px solid var(--linha); border-radius: var(--raio); overflow: hidden; display: flex; flex-direction: column; }
+.cartao .imagem { border: 0; border-bottom: 1px solid var(--linha); border-radius: 0; }
+.cartao .corpo { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+.cartao p { margin-top: 10px; font-size: 15px; }
+.cartao .links { margin-top: auto; padding-top: 16px; }
+
+/* como trabalho */
+.passos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; counter-reset: passo; }
+.passo { background: var(--cartao); border: 1px solid var(--linha); border-radius: var(--raio); padding: 18px; }
+.passo::before { counter-increment: passo; content: "0" counter(passo); font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--destaque); }
+.passo h4 { font-size: 16px; font-weight: 600; margin-top: 6px; }
+.passo p { font-size: 14.5px; color: var(--suave); margin-top: 6px; }
+
+/* sobre */
+.sobre { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.sobre div { background: var(--cartao); border: 1px solid var(--linha); border-radius: var(--raio); padding: 18px; }
+.sobre h4 { font-size: 16px; font-weight: 600; }
+.sobre .meta { margin-top: 2px; }
+.sobre p { font-size: 14.5px; color: var(--suave); margin-top: 8px; }
+
+footer { padding-top: 40px; padding-bottom: 64px; color: var(--suave); font-size: 15px; }
+footer .acoes { margin-top: 16px; }
+
+@media (max-width: 820px) {
+  .topo { padding-top: 48px; padding-bottom: 32px; }
+  .projeto { grid-template-columns: 1fr; padding: 18px; gap: 18px; }
+  .projeto:nth-of-type(even) .imagem { order: 0; }
+  .grade, .sobre { grid-template-columns: 1fr; }
+  .passos { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .conteudo { padding-left: 16px; padding-right: 16px; }
+  .passos { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="conteudo topo">
+  <p class="rotulo">Sistemas e Mídias Digitais · UFC</p>
+  <h1>Pedro Lucas de Souza Ribeiro</h1>
+  <p class="chamada">Construo <strong>agentes, automações e ferramentas com IA generativa</strong>, de ponta a ponta: do problema de quem executa a tarefa até a demo no ar.</p>
+  <div class="acoes">
+    <a class="botao principal" href="curriculo.pdf">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>
+      Currículo (PDF)</a>
+    <a class="botao" href="https://github.com/P-Lucas-S">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+      GitHub</a>
+    <a class="botao" href="mailto:pedroplucas60@gmail.com">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+      pedroplucas60@gmail.com</a>
+  </div>
+</header>
+
+<main class="conteudo">
+
+<section id="ia">
+  <h2>Projetos com IA</h2>
+  <p class="aviso">As demos rodam no plano gratuito e podem levar até 1 minuto para abrir na primeira visita. Esta página já pediu para elas acordarem.</p>
+
+  <article class="projeto">
+    <div class="imagem"><img src="img/agente.jpg" alt="Tela do agente de atendimento: conversa com o cliente à esquerda e, à direita, o painel Bastidores mostrando cada ferramenta chamada pelo modelo" loading="lazy"></div>
+    <div class="texto">
+      <h3>Agente de atendimento com IA</h3>
+      <p class="meta">projeto autoral · nov/2026 · loja fictícia</p>
+      <p>Um agente em que o LLM (Gemini) orquestra a conversa e decide, por chamada de ferramentas, quando buscar produtos, consultar pedidos, abrir chamados ou passar para uma pessoa.</p>
+      <ul>
+        <li>Responde só com o que as ferramentas devolvem; o painel “Bastidores” mostra cada decisão do modelo.</li>
+        <li>Limites de uso e tempo máximo por chamada; coberto por 7 testes automatizados.</li>
+      </ul>
+      <div class="stack"><span>Python</span><span>FastAPI</span><span>Gemini API</span><span>function calling</span><span>pytest</span><span>Render</span></div>
+      <div class="links">
+        <a class="botao principal" href="https://agente-mercadinho.onrender.com">Abrir demo</a>
+        <a class="botao" href="https://github.com/P-Lucas-S/agente-loja">Código</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="projeto">
+    <div class="imagem"><img src="img/analista.jpg" alt="Tela do analista de vendas: indicadores do ano, perguntas sugeridas e uma resposta do Gemini com gráfico" loading="lazy"></div>
+    <div class="texto">
+      <h3>Analista de vendas com IA</h3>
+      <p class="meta">projeto autoral · nov/2026 · dados fictícios</p>
+      <p>Análise de dados com IA: perguntas em português sobre um ano de vendas (cerca de 35 mil linhas). O Gemini escolhe entre cinco análises prontas em pandas e explica o resultado, com gráfico.</p>
+      <ul>
+        <li>O modelo nunca escreve código nem estima valores: todo número sai de uma função.</li>
+        <li>Quando os dados não respondem (lucro, estoque), ele diz isso e sugere o que dá para analisar.</li>
+      </ul>
+      <div class="stack"><span>Python</span><span>pandas</span><span>FastAPI</span><span>Gemini API</span><span>Chart.js</span></div>
+      <div class="links">
+        <a class="botao principal" href="https://analista-vendas-mercadinho.onrender.com">Abrir demo</a>
+        <a class="botao" href="https://github.com/P-Lucas-S/analista-vendas">Código</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="projeto">
+    <div class="imagem n8n">
+      <img src="img/n8n-form.jpg" alt="Formulário Fale com o Mercadinho Exemplo, preenchido com uma reclamação" loading="lazy">
+      <img src="img/n8n-alerta.jpg" alt="Alerta de mensagem urgente no Telegram, com resumo e sugestão de resposta gerados pelo Gemini" loading="lazy">
+    </div>
+    <div class="texto">
+      <h3>Automação de atendimento no n8n</h3>
+      <p class="meta">projeto autoral · nov/2026</p>
+      <p>Dois fluxos: um classifica cada mensagem de cliente com o Gemini (assunto, sentimento, urgência e resposta sugerida) e avisa no Telegram os casos urgentes; outro manda um resumo do dia às 19h.</p>
+      <ul>
+        <li>Saída estruturada em JSON garante que a classificação venha sempre no mesmo formato.</li>
+        <li>Se o modelo falhar, a mensagem é gravada para revisão em vez de se perder.</li>
+      </ul>
+      <div class="stack"><span>n8n</span><span>Gemini API</span><span>Telegram</span><span>Data Tables</span></div>
+      <div class="links">
+        <a class="botao principal" href="https://pedrinribeiro.app.n8n.cloud/form/mercadinho-fale-conosco">Testar o formulário</a>
+        <a class="botao" href="https://github.com/P-Lucas-S/automacao-n8n">Código</a>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section id="sistemas">
+  <h2>Sistemas web</h2>
+  <div class="grade">
+    <article class="cartao">
+      <div class="imagem"><img src="img/planejador.jpg" alt="Dashboard do Planejador de Equipes com projetos, ocupação da equipe e apontamento do mês" loading="lazy"></div>
+      <div class="corpo">
+        <h3>Planejador de Equipes</h3>
+        <p class="meta">projeto autoral · 2026 · desenvolvedor único</p>
+        <p>Gestores alocam pessoas em projetos e controlam horas contratadas, com teto mensal garantido mesmo com vários gestores alocando ao mesmo tempo e três dashboards que mudam conforme o papel do usuário.</p>
+        <div class="stack"><span>React</span><span>TypeScript</span><span>Node/Express</span><span>Prisma</span><span>MySQL</span></div>
+        <div class="links"><a class="botao principal" href="https://planejador-equipes.onrender.com">Abrir demo</a></div>
+      </div>
+    </article>
+    <article class="cartao">
+      <div class="imagem"><img src="img/balcao.jpg" alt="Tela de atendimento guiado do Balcão MEI, com o empreendedor selecionado e os serviços disponíveis" loading="lazy"></div>
+      <div class="corpo">
+        <h3>Balcão MEI</h3>
+        <p class="meta">projeto autoral · 2025–2026</p>
+        <p>Atendimento presencial a microempreendedores como fluxo guiado: o atendente escolhe a pessoa e aciona 12 serviços filtrados pelo perfil, com dados preenchidos pelas APIs dos Correios e da Receita Federal.</p>
+        <div class="stack"><span>Python</span><span>Flask</span><span>PostgreSQL</span><span>pytest</span></div>
+        <div class="links">
+          <a class="botao principal" href="https://balcao-mei.onrender.com">Abrir demo</a>
+          <a class="botao" href="https://github.com/P-Lucas-S/balcao-mei">Código</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="como">
+  <h2>Como eu trabalho</h2>
+  <div class="passos">
+    <div class="passo"><h4>Parto da dor</h4><p>Converso com quem executa a tarefa e entendo onde o tempo se perde.</p></div>
+    <div class="passo"><h4>Corto o escopo</h4><p>Defino a menor versão que já resolve o problema de verdade.</p></div>
+    <div class="passo"><h4>Construo com IA</h4><p>Prompt engineering, agentes e vibe coding com Claude Code, até a demo no ar.</p></div>
+    <div class="passo"><h4>Ajusto com o usuário</h4><p>Testo com quem vai usar e corrijo o que a primeira versão errou.</p></div>
+  </div>
+</section>
+
+<section id="sobre">
+  <h2>Onde estou</h2>
+  <div class="sobre">
+    <div><h4>Bolsista de Pesquisa e Desenvolvimento</h4><p class="meta">LIT · UFC · desde mar/2025</p><p>Desenvolvo, mantenho e publico aplicativos móveis de saúde em Flutter e Firebase, na App Store e no Google Play.</p></div>
+    <div><h4>Bolsista de Mídias</h4><p class="meta">SETEE · Prefeitura de Maracanaú · desde set/2025</p><p>Crio conteúdo para os canais do SINE Municipal e prototipei ferramentas para a equipe, como um gerador de cards de vagas.</p></div>
+    <div><h4>Sistemas e Mídias Digitais</h4><p class="meta">UFC · trilha de Sistemas · previsão jul/2027</p><p>TCC em andamento sobre regras trabalhistas como código (Rules as Code).</p></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="conteudo">
+  <p>Maracanaú, CE · disponível para trabalho remoto.</p>
+  <div class="acoes">
+    <a class="botao principal" href="mailto:pedroplucas60@gmail.com">Falar comigo</a>
+    <a class="botao" href="curriculo.pdf">Currículo (PDF)</a>
+    <a class="botao" href="https://github.com/P-Lucas-S">GitHub</a>
+  </div>
+</footer>
+
+<script>
+// Acorda as demos do Render (plano gratuito dorme sem tráfego) enquanto a pessoa lê a página.
+["https://agente-mercadinho.onrender.com/api/health",
+ "https://analista-vendas-mercadinho.onrender.com/api/health",
+ "https://planejador-equipes.onrender.com/api/health",
+ "https://balcao-mei.onrender.com/"].forEach(function (u) {
+  try { fetch(u, { mode: "no-cors", cache: "no-store" }).catch(function () {}); } catch (e) {}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# Mantém as demos de IA acordadas em horário comercial (seg–sex, 8h–20h de Brasília).
+# O plano gratuito do Render dorme após 15 min sem tráfego e dá 750 horas/mês para a
+# conta inteira; este horário usa cerca de 530 h para as duas demos e deixa folga.
+# Horários em UTC: 11h–22h50 UTC = 8h–19h50 de Brasília.
+name: Manter demos acordadas
+
+on:
+  schedule:
+    - cron: "*/10 11-22 * * 1-5"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Chamar /api/health das demos
+        run: |
+          for url in \
+            https://agente-mercadinho.onrender.com/api/health \
+            https://analista-vendas-mercadinho.onrender.com/api/health
+          do
+            code=$(curl -s -o /dev/null -w "%{http_code}" -m 90 "$url" || echo "falhou")
+            echo "$url -> $code"
+          done
